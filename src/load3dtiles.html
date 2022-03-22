@@ -7,6 +7,7 @@
     <title>Document</title>
     <script src="../lib/Cesium/Cesium.js"></script>
     <link href="../lib/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <script src="../lib/MeasureDistance.js"></script>
     <style>
         html,
         body {
@@ -17,14 +18,16 @@
 </head>
 <body>
     <div id="CesiumContainer"></div>
+    <!--测量距离功能-->
+    <div id="button_distance_measure" style="background-color:aquamarine ; position: absolute;top:20px; left:20px; width: 35px;height: 35px" onclick="alert('测量已开始！单击即可选点，双击确认终点！') ;measureDistance();">测量距离</div>
     <script>
-        var esri = new Cesium.ArcGisMapServerImageryProvider({
+        /*var esri = new Cesium.ArcGisMapServerImageryProvider({
             url:"https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"
-        })
+        })*/
         Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzYTc0ZjA0YS1kNmNhLTRlMjMtYTgxOC1hOTg4YjhkMTMzMWUiLCJpZCI6ODU2MTIsImlhdCI6MTY0NzE3NDM0N30.z299-Si_hwbT5dYCDVdOIvdlKZWZi-zWdzWZj2F0Z-Q';
         const viewer = new Cesium.Viewer('CesiumContainer', {
             baseLayerPicker: false,
-            imageryProvider: esri,
+            //imageryProvider: esri,
             terrainProvider: new Cesium.CesiumTerrainProvider({
                 url: Cesium.IonResource.fromAssetId(1),
                 requestVertexNormals: true,
@@ -32,11 +35,11 @@
             })
         });
 
-        var tileset = viewer.scene.primitives.add(
+        /*var tileset = viewer.scene.primitives.add(
             new Cesium.Cesium3DTileset({
                 url: Cesium.IonResource.fromAssetId(96188)
             })
-        );
+        );*/
 
         // viewer.camera.setView({
         //     destination: Cesium.Cartesian3.fromDegrees(118.2157, 25.0780, 3000),
