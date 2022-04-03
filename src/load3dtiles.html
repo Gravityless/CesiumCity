@@ -8,6 +8,7 @@
     <script src="../lib/Cesium/Cesium.js"></script>
     <link href="../lib/Cesium/Widgets/widgets.css" rel="stylesheet">
     <script src="../lib/Measure.js"></script>
+    <script src="../lib/Showposition.js"></script>
     <style>
         html,
         body {
@@ -23,6 +24,7 @@
     <div id="button_distance_measure" style="background-color:aquamarine ; position: absolute;top:20px; left:20px; width: 35px;height: 35px" onclick="alert('测量已开始！单击即可选点，双击确认终点！') ;measureDistance();">测量距离</div>
     <div id="button_distance_clear" style="background-color:blueviolet ; position: absolute;top:60px; left:20px; width: 35px;height: 35px" onclick="clearEntity();">清除绘制对象</div>
     <div id="button_polygon_measure" style="background-color:aquamarine ; position: absolute;top:20px; left:60px; width: 35px;height: 35px" onclick="alert('测量已开始！单击即可选点，双击确认终点！') ;measureArea();">测量面积</div>
+    <div id="button_getposition" style="background-color:aquamarine ; position: absolute;top:100px; left:20px; width: 35px;height: 35px" onclick="alert('测量已开始！单击即可选点') ;showposition();">显示位置</div>
     <script>
         /*var esri = new Cesium.ArcGisMapServerImageryProvider({
             url:"https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"
