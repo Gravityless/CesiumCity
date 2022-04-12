@@ -10,6 +10,7 @@
     <script src="../lib/Measure.js"></script>
     <script src="../lib/Showposition.js"></script>
     <script src="../lib/weather.js"></script>
+    <script src="../lib/showBuilding.js"></script>
     <style>
         html,
         body {
@@ -29,6 +30,7 @@
     <div id="weather_fog" class="button" style="background-color:aquamarine ; position: absolute;top:140px; left:20px; width: 35px;height: 35px" onclick="makefog();alert('单击鼠标右键退出天气');">天气效果：雾</div>
     <div id="weather_snow" class="button" style="background-color:aquamarine ; position: absolute;top:140px; left:60px; width: 35px;height: 35px" onclick="makesnow();alert('单击鼠标右键退出天气');">天气效果：雪</div>
     <div id="weather_rain" class="button" style="background-color:aquamarine ; position: absolute;top:140px; left:100px; width: 35px;height: 35px" onclick="makerain();alert('单击鼠标右键退出天气');">天气效果：雨</div>
+    <div id="show_building" class="button" style="background-color:greenyellow ; position: absolute;top:180px; left:20px; width: 35px;height: 35px" onclick="showBuilding();alert('单击选中信息');">显示建筑物信息</div>
     <script>
         /*var esri = new Cesium.ArcGisMapServerImageryProvider({
             url:"https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer"
@@ -58,7 +60,7 @@
         }).otherwise(function (error) {
             console.log(error);
         });
-
+        
     </script>
 </body>
 </html>
