@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cesiumcity.mapper.PolygonMapper">
+
+    <resultMap id="polygonResultMap" type="polygon">
+        <result property="polygonName" column="polygon_name" />
+    </resultMap>
+
+    <delete id="deleteByIds">
+        delete from tb_polygon where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="selectByPageAndCondition" resultType="com.cesiumcity.pojo.Polygon" resultMap="polygonResultMap">
+        select * from tb_polygon
+        <where>
+            <if test="polygon.polygonName != null and polygon.polygonName != ''">
+                and polygon_name like #{polygon.polygonName}
+            </if>
+            <if test="polygon.location != null and polygon.location != ''">
+                and location like #{polygon.location}
+            </if>
+            <if test="polygon.status != null">
+                and status = #{polygon.status}
+            </if>
+        </where>
+        limit #{begin},#{size}
+    </select>
+
+    <select id="selectTotalCountByCondition" resultType="java.lang.Integer">
+        select count(*) from tb_polygon
+        <where>
+            <if test="polygonName != null and polygonName != ''">
+                and polygon_name like #{polygonName}
+            </if>
+            <if test="location != null and location != ''">
+                and location like #{location}
+            </if>
+            <if test="status != null">
+                and status = #{status}
+            </if>
+        </where>
+    </select>
+</mapper>
