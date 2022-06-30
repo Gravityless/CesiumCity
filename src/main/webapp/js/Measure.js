@@ -327,6 +327,7 @@ var measureArea=function(){
                             }
                         });
                         var cuboid = viewer.entities.add({
+                            /*id:'test',*/
                             polygon:{
                                 hierarchy: new Cesium.CallbackProperty(function () {
                                     var arrPoint = new Cesium.PolygonHierarchy(points);
