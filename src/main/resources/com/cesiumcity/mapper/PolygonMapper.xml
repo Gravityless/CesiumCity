@@ -16,7 +16,7 @@
     </delete>
 
     <select id="selectByPageAndCondition" resultType="com.cesiumcity.pojo.Polygon" resultMap="polygonResultMap">
-        select * from tb_polygon
+        select * from tb_polygon<!--
         <where>
             <if test="polygon.polygonName != null and polygon.polygonName != ''">
                 and polygon_name like #{polygon.polygonName}
@@ -28,7 +28,7 @@
                 and status = #{polygon.status}
             </if>
         </where>
-        limit #{begin},#{size}
+        limit #{begin},#{size}-->
     </select>
 
     <select id="selectTotalCountByCondition" resultType="java.lang.Integer">

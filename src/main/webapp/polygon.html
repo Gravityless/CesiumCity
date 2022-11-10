@@ -173,8 +173,8 @@
         },
 
         methods: {
-            /* 查询所有
-            selectAll() {
+             //查询所有
+            /*selectAll() {
                 var _this = this;
                 axios({
                     method:"get",
@@ -182,16 +182,17 @@
                 }).then(function (resp) {
                     _this.tableData = resp.data
                 })
-            },*/
-
+            },
+*/
             // 查询分页
             selectAll() {
                 var _this = this;
                 axios({
                     method:"post",
                     url:"http://localhost:8080/CesiumCity/polygon/selectByPageAndCondition?currentPage="+ _this.currentPage +"&pageSize="+ _this.pageSize,
-                    data:_this.polygon
+                    data: _this.polygon
                 }).then(function (resp) {
+                    console.log(resp);
                     _this.tableData = resp.data.rows;
                     _this.totalCount = resp.data.totalCount;
                 })
@@ -218,7 +219,7 @@
             },
             // 添加数据
             addPolygon(){
-                // console.log(this.polygon);
+                 //console.log(this.polygon);
                 var _this = this;
                 // 发送ajax异步请求，添加数据
                 axios({
