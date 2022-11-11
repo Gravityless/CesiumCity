@@ -39,6 +39,13 @@ buildNumber.properties
 *.zip
 *.tar.gz
 *.rar
+#picture
+*.jpg
+*.png
+*.tif
+
+#model
+*.h5
 
 # CMake
 cmake-build-debug/
@@ -60,3 +67,11 @@ fabric.properties
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+#model data
+classify/unet-tf2/building_dataset/
+classify/unet-tf2/building_log/
+classify/unet-tf2/building_resnet50_log/
+classify/unet-tf2/img/
+classify/unet-tf2/img_out/
+classify/unet-tf2/img_out_resnet/
